@@ -241,13 +241,13 @@ spec:
           - subjectaccessreviews
           verbs:
           - create
-        serviceAccountName: policy-controller-operator-controller-manager
+        serviceAccountName: policy-op-controller-manager
       deployments:
       - label:
           app.kubernetes.io/managed-by: kustomize
           app.kubernetes.io/name: policy-controller-operator
           control-plane: controller-manager
-        name: policy-controller-operator-controller-manager
+        name: policy-op-controller-manager
         spec:
           replicas: 1
           selector:
@@ -297,7 +297,7 @@ spec:
                     - ALL
               securityContext:
                 runAsNonRoot: true
-              serviceAccountName: policy-controller-operator-controller-manager
+              serviceAccountName: policy-op-controller-manager
               terminationGracePeriodSeconds: 10
       permissions:
       - rules:
@@ -332,7 +332,7 @@ spec:
           verbs:
           - create
           - patch
-        serviceAccountName: policy-controller-operator-controller-manager
+        serviceAccountName: policy-op-controller-manager
     strategy: deployment
   installModes:
   - supported: true
