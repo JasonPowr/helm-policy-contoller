@@ -8,7 +8,8 @@ metadata:
           "apiVersion": "rhtas.charts.redhat.com/v1alpha1",
           "kind": "PolicyController",
           "metadata": {
-            "name": "policycontroller-sample"
+            "name": "policycontroller-sample",
+            "namespace": "policy-controller-operator"
           },
           "spec": {
             "policy-controller": {
@@ -199,6 +200,8 @@ spec:
           resources:
           - mutatingwebhookconfigurations
           - validatingwebhookconfigurations
+          - validatingadmissionpolicies
+          - validatingadmissionpolicybindings
           verbs:
           - '*'
         - apiGroups:
